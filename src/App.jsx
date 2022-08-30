@@ -1,8 +1,8 @@
 import { Header } from './Components/Header';
 import { Sidebar } from './Components/Sidebar';
-import { Post } from './Components/post';
+import { Post } from './Components/Post';
 
-import styles from './app.module.css';
+import styles from './App.module.css';
 
 import './global.css';
 
@@ -45,7 +45,7 @@ const posts = [
   },
 ];
 
-function App() {
+export function App() {
   return (
     <div>
       <Header />
@@ -55,6 +55,7 @@ function App() {
           {posts.map((post) => {
             return (
               <Post
+                key={post.id}
                 author={post.author}
                 content={post.content}
                 publishedAt={post.publishedAt}
@@ -66,5 +67,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
